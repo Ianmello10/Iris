@@ -1,0 +1,76 @@
+---
+title: Aws
+author: Maik
+publishDate: Dec 21, 2024 23:15:30
+description: How to use bun
+img: /images/te.jpg
+
+---
+
+
+
+  
+# Welcome to my MDX page 🌱 !
+ 
+> The text below contains parts of the next js doc this is just for testing markdown
+ 
+This is a list in markdown:
+ 
+- One
+- Two
+- Three
+ 
+Checkout my React component:
+ ```
+<MyComponent />
+
+```
+Navigating to the /mdx-page route should display your rendered MDX page.
+
+Using imports
+Create a new page within the /app directory and an MDX file wherever you'd like:
+
+```
+  my-project
+  ├── app
+  │   └── mdx-page
+  │       └── page.(tsx/js)
+  ├── markdown
+  │   └── welcome.(mdx/md)
+  |── mdx-components.(tsx/js)
+  └── package.json
+  
+  ```
+You can use MDX in these files, and even import React components, directly inside your MDX page:
+
+Import the MDX file inside the page to display the content:
+
+app/mdx-page/page.tsx
+TypeScript
+
+TypeScript
+```
+import Welcome from '@/markdown/welcome.mdx'
+ 
+export default function Page() {
+  return <Welcome />
+}
+```
+Navigating to the /mdx-page route should display your rendered MDX page.
+
+Using custom styles and components
+Markdown, when rendered, maps to native HTML elements. For example, writing the following markdown:
+
+
+## This is a heading 🌱
+This is a list in markdown:
+ 
+- One
+- Two
+- Three
+Generates the following HTML:
+
+
+
+ 
+ 
