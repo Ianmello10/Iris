@@ -1,8 +1,28 @@
+<div align="center">
+  <img src="public/images/irislogo.png" alt="Descrição da imagem" width="100" />
+</div> 
 
-## Íris is an open-source markdown-based blog template 
+<div align='center'> 
 
+## Íris Open-Source Blog Template
+
+</div>
  
-Íris is an open-source markdown-based blog template built with Next.js and Shadcnui.Íris is designed to be simple and flexible it alow you to build your own blog with ease and customization, your rss feed is also supported for easy sharing of your posts. Turn your notes into a blog.
+Íris is an open-source Markdown-based blog template built with Next.js and Shadcn UI. It is designed to be simple and flexible, allowing you to build your own blog with ease and customization. Turn your notes into a blog effortlessly.
+
+Features:
+
+- SEO optimization 🔍
+- Markdown-based 🗒
+- RSS feed 📶
+- Image optimization ⚡
+- GitHub as CMS 😺
+
+## Install 
+
+```shel 
+npm create next-app --example https://github.com/Ianmello10/Iris blog
+```
 
 
 
