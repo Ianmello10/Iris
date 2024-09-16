@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/images/irislogo.png" alt="Descrição da imagem" width="100" />
+  <img src="public/images/irisrmvbg.png" alt="Descrição da imagem" width="100" />
 </div> 
 
 <div align='center'> 
