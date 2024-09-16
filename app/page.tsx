@@ -21,9 +21,11 @@ const { posts } = await getAllPosts();
 					<div className="lg:w-[50%] px-2 flex flex-col  ">
 						<h1 className="text-6xl font-extrabold">Íris </h1>
 						<p className="text-sm lg:text-xl mt-1 ">
-						 Íris is an open-source markdown-based blog template built with Next.js and Shadcnui.Íris is designed to be simple and flexible it alow 
-						 you to build your own blog with ease and customization, your rss feed is also supported for easy sharing of your posts.
-						 Turn your notes into a blog.
+						Íris is an open-source Markdown-based blog template built with Next.js and Shadcn UI. 
+						It is designed to be simple and flexible, allowing you to build your own blog with ease and customization. 
+						Turn your notes into a blog effortlessly.
+
+
 						</p>
 						<div>
 
