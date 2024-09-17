@@ -21,7 +21,7 @@ Features:
 ## Install 
 
 ```shel 
-npm create next-app --example https://github.com/Ianmello10/Iris blog
+npx create-next-app@latest --example https://github.com/Ianmello10/iris blog
 ```
 
 
