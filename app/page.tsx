@@ -17,7 +17,7 @@ const { posts } = await getAllPosts();
 		<div className=" w-full flex flex-col min-h-screen gap-y-10  mt-12  container mx-auto ">
 			
 			<main className="w-full lg:mt-12   ">
-				<div className="flex lg:w-full flex-col lg:flex-row mx-auto justify-between items-center   ">
+				<div className="px-2 flex lg:w-full md:px-0 flex-col lg:flex-row mx-auto justify-between items-center   ">
 					<div className="lg:w-[50%] px-2 flex flex-col  ">
 						<h1 className="text-6xl font-extrabold">Íris </h1>
 						<p className="text-sm lg:text-xl mt-1 ">

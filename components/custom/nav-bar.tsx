@@ -52,7 +52,7 @@ const router = useRouter()
 	return (
 		<>
 			<header className="w-full h-20      bg-transparent sticky z-50  top-0   backdrop-blur-sm container mx-auto ">
-				<nav className="w-[90%] lg:w-full  h-20 flex items-center justify-between mx-auto   ">
+				<nav className="w-[90%] lg:container  h-20 flex items-center justify-between mx-auto   ">
 					<Link href={"/"}>
 						<div className="w-32 flex items-center h-full gap-x-2 ">
 							{" "}
