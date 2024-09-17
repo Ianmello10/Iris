@@ -1,9 +1,10 @@
 import Image from "next/image";
-import {  getAllPosts, type Post } from "@/app/blog/utils";
+import { getAllPosts, type Post } from "@/app/blog/utils";
 import NavBar from "@/components/custom/nav-bar";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import validator from "validator";
+import { baseUrl } from "@/app/sitemap";
 
 export async function generateMetadata({
 	params,
@@ -24,9 +25,32 @@ export async function generateMetadata({
 		notFound();
 	}
 
+	const ogImage = post.frontmatter.img
+		? post.frontmatter.img
+		: `${baseUrl}/og?title=${encodeURIComponent(post.frontmatter.title)}`;
+
 	return {
 		title: post.frontmatter.title,
 		description: post.frontmatter.description,
+		openGraph: {
+			title: post.frontmatter.title,
+			description: post.frontmatter.description,
+			type: "article",
+			url: `${baseUrl}/blog/${post.slug}`,
+			images: [
+				{
+					url: ogImage,
+					width: 1200,
+					height: 630,
+				},
+			],
+		},
+		twitter: {
+			title: post.frontmatter.title,
+			description: post.frontmatter.description,
+			card: "summary_large_image",
+			images: [ogImage],
+		},
 	};
 }
 
@@ -46,7 +70,6 @@ export default async function blogPage({
 	) as Post;
 
 	const posts = await getAllPosts();
-
 
 	if (!post) {
 		notFound();
@@ -71,7 +94,8 @@ export default async function blogPage({
 						</span>
 						<span className="block text-sm">
 							{" "}
-							Published on {new Date(post.frontmatter.publishDate).toDateString()}
+							Published on{" "}
+							{new Date(post.frontmatter.publishDate).toDateString()}
 						</span>
 					</div>
 				</div>
