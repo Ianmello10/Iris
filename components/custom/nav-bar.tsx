@@ -82,7 +82,7 @@ const router = useRouter()
 						<Button variant="outline" size="icon">
 							<Link
 								className="  flex items-center justify-center rounded-md  "
-								href={"https://github.com/irisdev"}
+								href={"https://github.com/Ianmello10/iris"}
 							>
 								<Github />
 							</Link>
