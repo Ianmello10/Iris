@@ -2,7 +2,7 @@
 import { getAllPosts } from "@/app/blog/utils";
 
 
-export const baseUrl =  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://iris-lake.vercel.app/";
+export const baseUrl =  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://iris-lake.vercel.app";
 
 export default async function sitemap() {
     
