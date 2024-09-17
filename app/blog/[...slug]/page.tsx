@@ -27,7 +27,7 @@ export async function generateMetadata({
 
 	const ogImage = post.frontmatter.img
 		? post.frontmatter.img
-		: `${baseUrl}/og?slug=${encodeURIComponent(post.frontmatter.title)}`;
+		: `${baseUrl}/og?title=${encodeURIComponent(post.frontmatter.title)}`;
 
 	return {
 		title: post.frontmatter.title,

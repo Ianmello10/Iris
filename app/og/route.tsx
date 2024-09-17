@@ -1,8 +1,10 @@
 import { ImageResponse } from "next/og";
-import { Flower } from "lucide-react";
 
-export function GET() {
-	const title = "Iris - Simple and Flexible Blog Template";
+export function GET(request: Request) {
+
+    const url = new URL(request.url);
+
+	const title =  url.searchParams.get('title') || "Iris - Simple and Flexible Blog Template";
 
 	return new ImageResponse(
 		<div tw="flex flex-col w-full h-full items-center justify-center bg-white">
