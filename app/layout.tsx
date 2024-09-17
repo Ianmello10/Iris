@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 	url: `${baseUrl}`,
   images: [
     {
-      url: `${baseUrl}/og`,
+      url: `${baseUrl}/public/irismvbg.png`,
       width: 1200,
       height: 630,
     },
