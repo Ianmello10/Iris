@@ -9,6 +9,8 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+
 import { useCallback, useEffect, useState } from "react";
 import type { Post } from "@/app/blog/utils";
 export function PostComponent({ post }: { post: Post[] }) {
@@ -33,43 +35,28 @@ export function PostComponent({ post }: { post: Post[] }) {
 
 	return (
 		<div className="container mx-auto p-4  ">
-			<h2 className="text-5xl font-bold mb-4">Latest posts</h2>
+			<article className="grid-rows-2 grid-row-2 gap-4  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 mt-10  w-1/2 mx-auto ">
+				<h2 className="text-3xl font-bold mb-4">Latest posts 🌱</h2>
 
-			<div className="grid grid-cols-1 gap-4  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 mt-10 ">
 				{posts
 					.slice()
 					.slice(0, visiblePosts)
 					.map((post) => (
-						<Card
-							className="   rounded-lg bg-background shadow-sm transition-all hover:shadow-md mt-2 "
-							key={post.slug}
-						>
-							<CardHeader className="w-full ">
-								<Image
-									className="h  rounded-sm object-cover"
-									alt={post.frontmatter.title}
-									width={600}
-									height={400}
-									src={post.frontmatter.img}
-								/>
-								<CardTitle className="py-2">{post.frontmatter.title}</CardTitle>
-								<CardDescription className="text-md">
-									{post.frontmatter.description}
-								</CardDescription>
-								<CardDescription>
-									{(new Date(post.frontmatter.publishDate).toDateString())}
-								</CardDescription>
-							</CardHeader>
+						<Link href={`/blog/${post.slug}`} key={post.slug}>
+							<Card className="w-full  bg-neutral rounded-md  h-auto shadow-sm transition-all hover:shadow-md mt-2 py-0 ">
+								<CardHeader className=" ">
+									<CardTitle className=" ">{post.frontmatter.title}</CardTitle>
 
-							{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-							<CardFooter className="flex justify-between">
-								<Button>
-									<Link href={`/blog/${post.slug}`}> View More</Link>{" "}
-								</Button>
-							</CardFooter>
-						</Card>
+									<CardDescription className="text-md">
+										{post.frontmatter.description}
+									</CardDescription>
+								</CardHeader>
+
+								{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
+							</Card>
+						</Link>
 					))}
-			</div>
+			</article>
 			<div className="w-full flex justify-center mt-14">
 				{visiblePosts < posts.length && (
 					<Button type="button" onClick={handleLoadMore}>

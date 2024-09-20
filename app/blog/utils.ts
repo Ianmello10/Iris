@@ -13,6 +13,7 @@ interface PostFrontmatter {
 	publishDate: string;
 	description: string;
 	img: string;
+	category: string;
 }
 
 export interface Post {
