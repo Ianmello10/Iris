@@ -52,20 +52,22 @@ const router = useRouter()
 	return (
 		<>
 			<header className="w-full h-20      bg-transparent sticky z-50  top-0   backdrop-blur-sm container mx-auto ">
-				<nav className="w-[90%] lg:container  h-20 flex items-center justify-between mx-auto   ">
-					<div className="flex h-auto items-center">  
+				<nav className="w-[95%] lg:container  h-20 flex items-center justify-between mx-auto   ">
+					<div className="flex h-full w-52    items-center gap-x-2 ">  
 					<Link href={"/"}>
-						<div className="w-32 flex items-center h-full gap-x-2 ">
+						<div className="w-auto md:w-32 flex items-center h-full md:gap-x-2 ">
 							{" "}
 							<Flower className="w-8 h-8" />{" "}
-							<h1 className="text-xl font-bold text-black dark:text-white flex">
+							<h1 className="text-lg md:text-xl font-bold text-black dark:text-white ">
 								Íris
 							</h1>
 						</div>
 						 
 
 					</Link>
-					<Link className="font-semi-bold text-lg" href={'/blog'}>Blog</Link></div>
+					<Link className="font-semi-bold text-lg md:text-lg   " href={'/blog'}>Blog</Link>
+					
+					</div>
 
 					<div className="w-auto  flex items-center h-full gap-x-2 justify-end z-40">
 						{/* biome-ignore lint/a11y/useButtonType: <explanation> */}

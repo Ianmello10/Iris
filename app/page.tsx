@@ -29,7 +29,7 @@ const { posts } = await getAllPosts();
 						</p>
 						 
 					</div>
-					<div className="hidden lg:flex flex-col   h-auto w-auto ">
+					<div className=" lg:flex flex-col   h-auto w-auto ">
 					<Flower className="w-40 h-40 lg:w-80 lg:h-80" />
 					</div>
 				</div>

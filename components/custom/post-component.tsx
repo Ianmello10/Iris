@@ -35,7 +35,7 @@ export function PostComponent({ post }: { post: Post[] }) {
 
 	return (
 		<div className="container mx-auto p-4  ">
-			<article className="grid-rows-2 grid-row-2 gap-4  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 mt-10  w-1/2 mx-auto ">
+			<article className="grid-rows-2   gap-4   mt-10 w-[90%] lg:w-1/2 mx-auto ">
 				<h2 className="text-3xl font-bold mb-4">Latest posts 🌱</h2>
 
 				{posts
