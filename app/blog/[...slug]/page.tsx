@@ -6,6 +6,18 @@ import { notFound } from "next/navigation";
 import validator from "validator";
 import { baseUrl } from "@/app/sitemap";
 
+export const revalidate = 60
+
+
+export async function generateStaticParams() {
+	const posts = await getAllPosts();
+  
+	
+	return posts.posts.map((post) => ({
+	  slug: post.slug.split("/"),
+	}))
+  }
+
 export async function generateMetadata({
 	params,
 }: { params: { slug: string } }): Promise<Metadata> {
