@@ -23,10 +23,12 @@ export function PostComponent({ post }: { post: Post[] }) {
 	const handleLoadMore = () => {
 		setLoading(true);
 
-		setTimeout(() => {
-			setVisiblePosts(visiblePosts + 3);
+		const timer = setTimeout(() => {
+			setVisiblePosts((prevPosts) => prevPosts + 3);
 			setLoading(false);
 		}, 600);
+
+		return () => clearTimeout(timer);
 	};
 
 	useEffect(() => {
