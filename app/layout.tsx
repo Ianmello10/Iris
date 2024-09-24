@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import Footer from "@/components/custom/footer";
 import { baseUrl } from "./sitemap";
+import { Inter } from 'next/font/google'
 
 
 const geistSans = localFont({
@@ -17,7 +18,10 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
- 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Iris - Simple and Flexible Blog Template",
@@ -44,9 +48,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${inter.className} antialiased `}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      
       >
           <ThemeProvider
             attribute="class"

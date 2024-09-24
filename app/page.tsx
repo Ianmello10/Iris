@@ -1,6 +1,5 @@
 import { getAllPosts } from "./blog/utils";
 import { Flower } from "lucide-react";
-import { PostComponent } from "@/components/custom/post-component";
 import NavBar from "@/components/custom/nav-bar";
 
 export const metadata = {
@@ -37,6 +36,8 @@ const { posts } = await getAllPosts();
 			 	
 			</main>
 		</div>
+
+		
 		</div>
   );
 }
