@@ -1,6 +1,5 @@
 "use client";
 import {
-	Command,
 	CommandDialog,
 	CommandEmpty,
 	CommandGroup,
@@ -16,13 +15,12 @@ import Link from "next/link";
 import { Flower, Github, Command as CommandIcon } from "lucide-react";
 import type { Post } from "@/app/blog/utils";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
 
 const NavBar = memo(({ post }: { post: Post[] }) => {
-	
 	const [open, setOpen] = useState<boolean>(false);
 
-const router = useRouter()
+	const router = useRouter();
 	React.useEffect(() => {
 		const down = (e: KeyboardEvent) => {
 			if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
@@ -53,20 +51,22 @@ const router = useRouter()
 		<>
 			<header className="w-full h-20      bg-transparent sticky z-50  top-0   backdrop-blur-sm container mx-auto ">
 				<nav className="w-[95%] lg:container  h-20 flex items-center justify-between mx-auto   ">
-					<div className="flex h-full w-52    items-center gap-x-2 ">  
-					<Link href={"/"}>
-						<div className="w-auto md:w-32 flex items-center h-full md:gap-x-2 ">
-							{" "}
-							<Flower className="w-8 h-8" />{" "}
-							<h1 className="text-lg md:text-xl font-bold text-black dark:text-white ">
-								Íris
-							</h1>
-						</div>
-						 
-
-					</Link>
-					<Link className="font-semi-bold text-lg md:text-lg   " href={'/blog'}>Blog</Link>
-					
+					<div className="flex h-full w-52    items-center gap-x-2 ">
+						<Link href={"/"}>
+							<div className="w-auto md:w-32 flex items-center h-full md:gap-x-2 ">
+								{" "}
+								<Flower className="w-8 h-8" />{" "}
+								<h1 className="text-lg md:text-xl font-bold text-black dark:text-white ">
+									Íris
+								</h1>
+							</div>
+						</Link>
+						<Link
+							className="font-semi-bold text-lg md:text-lg   "
+							href={"/blog"}
+						>
+							Blog
+						</Link>
 					</div>
 
 					<div className="w-auto  flex items-center h-full gap-x-2 justify-end z-40">
@@ -96,31 +96,28 @@ const router = useRouter()
 					</div>
 				</nav>
 			</header>
-			<Command>
-				<CommandDialog open={open} onOpenChange={setOpen}>
-					<CommandInput placeholder="Type a command or search..." />
-					<CommandList>
-						<CommandEmpty>No results found.</CommandEmpty>
-						<CommandGroup heading="Suggestions" >
-							{post.map((i) => (
-								<CommandItem className="cursor-pointer"
-								
+			<CommandDialog open={open} onOpenChange={setOpen}>
+				<CommandInput placeholder="Type a command or search..." />
+				<CommandList>
+					<CommandEmpty>No results found.</CommandEmpty>
+					<CommandGroup heading="Suggestions">
+						{post.map((i) => (
+							<CommandItem
 								key={i.frontmatter.title}
 								value={i.frontmatter.title}
 								onSelect={() => {
-								  runCommand(() => router.push(`/blog/${i.slug}` as string))
-								}}  >
-									<span>
-										{" "}
-										 {i.frontmatter.title} 
-									</span>
-								</CommandItem>
-							))}
-						</CommandGroup>
-						<CommandSeparator />
-					</CommandList>
-				</CommandDialog>
-			</Command>
+									runCommand(() => router.push(`/blog/${i.slug}` as string));
+								}}
+							>
+								<span className="text-md grayscale ">
+									{i.frontmatter.title}
+								</span>
+							</CommandItem>
+						))}
+					</CommandGroup>
+					<CommandSeparator />
+				</CommandList>
+			</CommandDialog>
 		</>
 	);
 });
